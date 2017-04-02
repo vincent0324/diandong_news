@@ -1,0 +1,245 @@
+.header.header-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: -5rem;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.header {
+    background-color: white;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.header-content .wrap {
+    padding: 0.5rem 0.5rem 0.5rem;
+    height: 2.1rem;
+}
+
+.logo {
+    width: 3.2rem;
+    height: 1.1rem;
+}
+
+.logo a {
+    height: 0;
+    font-size: 0;
+    padding-top: 1.1rem;
+    overflow: hidden;
+    display: block;
+    background-image: url(http://i1.dd-img.com/assets/image/1484036498-aab8bc2ce8284ee0-256w-88h.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slogan {
+    width: 4.6rem;
+    height: 1.1rem;
+    margin-left: 0.5rem;
+}
+
+.slogan em {
+    display: block;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    padding-top: 1.1rem;
+    background-image: url(http://i1.dd-img.com/assets/image/1482305208-ceb991dce17835bb-184w-44h.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-overlay {
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.header-overlay-btn {
+    width: 1.1rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    text-align: center;
+}
+
+.header-overlay-btn i {
+    font-size: 0.8rem;
+    color: #4f6773;
+}
+
+.header-overlay .wrap {
+    padding-top: 0.7rem;
+}
+
+.header-overlay-city {
+    height: 1rem;
+    line-height: 1rem;
+    color: #bababa;
+    text-align: center;
+}
+
+.header-search-holder {
+    margin-top: 1rem;
+}
+
+.header-overlay-city a {
+    color: #00a0e9;
+    font-size: 0.55rem;
+}
+
+.header-overlay-city i {
+    font-size: 0.6rem;
+    display: inline-block;
+    margin-right: 0.1rem;
+}
+
+.header-search-holder {
+    width: 13.9rem;
+    height: 1.6rem;
+    margin: 0.9rem auto 0;
+}
+
+.search-bar {
+    position: relative;
+    width: 13.9rem;
+    height: 1.6rem;
+    background-color: #f2f2f2;
+    border: 1px solid #d8d8d8;
+    border-radius: 1.6rem;
+    position: relative;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.search-bar.focus {
+    border-color: #00a0e9;
+    background-color: white;
+}
+
+.search-submit-btn {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0;
+    right: 0.3rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: #00a0e9;
+}
+
+.search-submit-btn i {
+    font-size: 1rem;
+}
+
+.search-input {
+    position: relative;
+    width: 12rem;
+    height: 1.6rem;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border-width: 0;
+    padding-left: 0.8rem;
+    font-size: 0.6rem;
+}
+
+.header-nav-holder {
+    width: 13.8rem;
+    margin: 1.4rem auto 0;
+}
+
+.nav a {
+    float: left;
+    width: 4.5rem;
+    height: 2.8rem;
+    margin: 0 0.05rem 0.1rem;
+    text-align: center;
+    line-height: 2.8rem;
+    color: white;
+    font-size: 0.6rem;
+}
+
+.nav-item-home {
+    background-color: #00b8ec;
+}
+
+.nav-item-news {
+    background-color: #63b1a1;
+}
+
+.nav-item-product {
+    background-color: #7d83d6;
+}
+
+.nav-item-test {
+    background-color: #5671b3;
+}
+
+.nav-item-video {
+    background-color: #b56aad;
+}
+
+.nav-item-mall {
+    background-color: #c24c34;
+}
+
+.nav-item-shop {
+    background-color: #94bf41;
+}
+
+.nav-item-bbs {
+    background-color: #f38c1d;
+}
+
+.nav-item-app {
+    background-color: #edbe00;
+}
+
+.user-login-btn {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid #dbdbdb;
+    line-height: 2.8rem;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0.5rem;
+}
+
+.user-login-btn a {
+    color: #00a0e9;
+}
+
+.user-panel-avatar {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid #dbdbdb;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0.5rem;
+}
+
+.user-panel-avatar img {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.user-panel {
+    font-size: 0;
+    text-align: center;
+    margin-top: 2.2rem;
+}
+
+.user-panel i {
+    width: 5rem;
+    height: 1.4rem;
+    border-bottom: 1px solid #dbdbdb;
+    display: inline-block;
+    vertical-align: top;
+}
