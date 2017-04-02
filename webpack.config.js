@@ -1,14 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const config = {
+module.exports = {
 
     entry: {
-        header: path.resolve(__dirname, 'source/components/header/app.js')
+        appOverlay: path.resolve(__dirname, 'source/components/appOverlay/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/header'),
+        path: path.resolve(__dirname, 'source/components/appOverlay'),
         filename: '[name].debug.js'
     },
 
@@ -18,7 +18,7 @@ const config = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
+                options: {
                     presets: ['es2015', 'react']
                 }
             }, {
@@ -39,5 +39,3 @@ const config = {
         }
     }
 };
-
-module.exports = config;

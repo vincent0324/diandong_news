@@ -35,7 +35,7 @@ class Header extends React.Component {
                             <a href="http://m.diandong.com/">电动汽车网-电动邦</a>
                         </div>
                         <div id="slogan" className="slogan fn-left">
-                            <em>买电动车 上电动邦</em>
+                            <h2>资讯</h2>
                         </div>
                         <div className="header-overlay-btn fn-right">
                             <OverlayButton handleClick={this.toggleOverlay} overlayState={this.state.hasOverlay} />
