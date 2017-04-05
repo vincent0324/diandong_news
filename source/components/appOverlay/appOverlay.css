@@ -1,0 +1,58 @@
+.app-overlay {
+    background-color: #383a3b;
+}
+
+.app-overlay .wrap {
+    height: 2.4rem;
+    position: relative;
+}
+
+.app-overlay-logo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 8px;
+    margin: 0.2rem 0.4rem 0 0.4rem;
+    background-image: url(http://i1.dd-img.com/assets/image/1479283288-405964cd50fc7ae9-160w-160h.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.app-overlay-text {
+    color: white;
+    margin-top: 0.4rem;
+}
+
+.app-overlay-text h3 {
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.65rem;
+}
+
+.app-overlay-text p {
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.5rem;
+}
+
+.app-overlay-button {
+    width: 5.2rem;
+    height: 1.6rem;
+    border-radius: 0.8rem;
+    background-color: #3595e7;
+    color: white;
+    line-height: 1.6rem;
+    text-align: center;
+    font-size: 0.75rem;
+    margin: 0.4rem 1.4rem 0 0;
+}
+
+.app-overlay-star {
+    width: 0.85rem;
+    height: 1rem;
+    background-image: url(http://i1.dd-img.com/assets/image/1491371166-ba4e8e52a2e2ff9c-34w-40h.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0.4rem;
+}
