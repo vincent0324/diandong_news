@@ -4,11 +4,11 @@ const path = require('path');
 module.exports = {
 
     entry: {
-        appOverlay: path.resolve(__dirname, 'source/components/appOverlay/app.js')
+        home: path.resolve(__dirname, 'source/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/appOverlay'),
+        path: path.resolve(__dirname, 'build'),
         filename: '[name].debug.js'
     },
 
@@ -19,7 +19,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['es2015', 'stage-0', 'react']
+                    presets: ['es2015', 'react']
                 }
             }, {
                 test: /\.css$/,
