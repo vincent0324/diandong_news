@@ -1,0 +1,95 @@
+.share-mask {
+    position: fixed;
+    z-index: 1300;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.share-box {
+    position: fixed;
+    z-index: 1350;
+    background-color: white;
+    width: 100%;
+    min-width: 16rem;
+    left: 0;
+    bottom: 0;
+    height: 7rem;
+}
+
+.share-box-list {
+    height: 4.9rem;
+}
+
+.share-box-footer {
+    height: 2.1rem;
+    border-top: 1px solid #eaeaea;
+}
+
+.share-box-footer .wrap {
+    height: 2.1rem;
+}
+
+.share-box-footer a {
+    display: block;
+    width: 16rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #353d44;
+}
+
+.share-box-list {
+    padding-top: 0.9rem;
+}
+
+.share-box-list .wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.share-box-item {
+    width: 3rem;
+    margin: 0 1rem;
+    display: block;
+}
+
+.share-box-item span {
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.share-box-item em {
+    display: block;
+    width: 3rem;
+    text-align: center;
+    line-height: 1.3rem;
+    height: 1.3rem;
+    font-style: normal;
+    font-size: 0.5rem;
+    color: #353d44;
+}
+
+.share-box-weibo span {
+    background-color: #e66161;
+    background-image: url(http://i1.dd-img.com/assets/image/1491460833-8310439de177fd38-88w-88h.png);
+}
+
+.share-box-qzone span {
+    background-color: #f9cc61;
+    background-image: url(http://i1.dd-img.com/assets/image/1491460832-b3fdf65667c14ea8-88w-88h.png);
+}
+
+.share-box-wechat span {
+    background-color: #8fc31f;
+    background-image: url(http://i1.dd-img.com/assets/image/1491460833-cfa9a9cf71cf327d-88w-88h.png);
+}
