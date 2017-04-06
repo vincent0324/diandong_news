@@ -1,0 +1,74 @@
+.news-bar {
+    border-top: 1px solid #e4e4e4;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-width: 16rem;
+}
+
+.news-bar .wrap {
+    padding: 0.3rem 0.5rem;
+}
+
+.comment-input {
+    height: 1.3rem;
+    width: 9.7rem;
+    border-radius: 0.65rem;
+    border: 1px solid #d9d9d9;
+    background-color: #eee;
+    font-size: 0.6rem;
+    color: #c5c5c5;
+    padding-left: 0.4rem;
+    line-height: 1.2rem;
+}
+
+.comment-button {
+    height: 1.3rem;
+    font-size: 0;
+    text-align: right;
+}
+
+.comment-button a {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: relative;
+    margin-left: 0.4rem;
+}
+
+.comment-button span {
+    display: block;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.comment-item-number span {
+    background-image: url(http://i1.dd-img.com/assets/image/1491378537-acfa04a678a7b41a-52w-52h.png);
+}
+
+.comment-like-number span {
+    background-image: url(http://i1.dd-img.com/assets/image/1491378537-4b1bea0eba444baa-52w-52h.png);
+}
+
+.comment-share span {
+    background-image: url(http://i1.dd-img.com/assets/image/1491378537-734c58ca2fcffa24-52w-52h.png);
+}
+
+.comment-button i {
+    position: absolute;
+    height: 0.5rem;
+    min-width: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #e54545;
+    color: white;
+    text-align: center;
+    font-size: 0.35rem;
+    top: 0;
+    left: 0.8rem;
+    font-style: normal;
+    padding: 0 0.1rem;
+}
