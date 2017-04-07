@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentBox from './CommentBox.react';
+import Share from '../share/Share.react';
 import './newsBar.css';
 
 class NewsBar extends React.Component {
@@ -8,8 +9,12 @@ class NewsBar extends React.Component {
         super(props);
         this.showCommentBox = this.showCommentBox.bind(this);
         this.hideCommentBox = this.hideCommentBox.bind(this);
+        this.showShareBox = this.showShareBox.bind(this);
+        this.hideShareBox = this.hideShareBox.bind(this);
         this.state = {
-            hasCommentBox: false
+            hasCommentBox: false,
+            hasShare: false,
+            numberOfLikes: 0
         };
     }
 
@@ -19,6 +24,14 @@ class NewsBar extends React.Component {
 
     hideCommentBox() {
         this.setState({hasCommentBox: false});
+    }
+
+    showShareBox() {
+        this.setState({hasShare: true});
+    }
+
+    hideShareBox() {
+        this.setState({hasShare: false});
     }
 
     render() {
@@ -36,7 +49,7 @@ class NewsBar extends React.Component {
                                 <span></span>
                                 <i>4</i>
                             </a>
-                            <a href="javascript:;" className="comment-share">
+                            <a href="javascript:;" className="comment-share" onClick={this.showShareBox}>
                                 <span></span>
                             </a>
                         </div>
@@ -44,6 +57,7 @@ class NewsBar extends React.Component {
                 </div>
 
                 <CommentBox commentState={this.state.hasCommentBox} handleClick={this.hideCommentBox}/>
+                <Share shareState={this.state.hasShare} hideShareBox={this.hideShareBox}/>
             </div>
         );
     }

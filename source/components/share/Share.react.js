@@ -6,14 +6,6 @@ class Share extends React.Component {
 
     constructor(props) {
         super(props);
-        this.hideShare = this.hideShare.bind(this);
-        this.state = {
-            hasShare: true
-        }
-    }
-
-    hideShare() {
-        this.setState({hasShare: false});
     }
 
     componentDidMount() {
@@ -31,7 +23,7 @@ class Share extends React.Component {
     }
 
     render() {
-        if (this.state.hasShare) {
+        if (this.props.shareState) {
             return (
                 <div className="share">
                     <div className="share-mask"></div>
@@ -54,7 +46,7 @@ class Share extends React.Component {
                         </div>
                         <div className="share-box-footer">
                             <div className="wrap">
-                                <a className="share-box-cancel" href="javascript:;" onClick={this.hideShare}>取消</a>
+                                <a className="share-box-cancel" href="javascript:;" onClick={this.props.hideShareBox}>取消</a>
                             </div>
                         </div>
                     </div>

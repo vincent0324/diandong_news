@@ -9477,21 +9477,10 @@ var Share = function (_React$Component) {
     function Share(props) {
         _classCallCheck(this, Share);
 
-        var _this = _possibleConstructorReturn(this, (Share.__proto__ || Object.getPrototypeOf(Share)).call(this, props));
-
-        _this.hideShare = _this.hideShare.bind(_this);
-        _this.state = {
-            hasShare: true
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Share.__proto__ || Object.getPrototypeOf(Share)).call(this, props));
     }
 
     _createClass(Share, [{
-        key: 'hideShare',
-        value: function hideShare() {
-            this.setState({ hasShare: false });
-        }
-    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             (0, _zepto2.default)(document).on('click', '.share-box-weibo', function () {
@@ -9509,7 +9498,7 @@ var Share = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            if (this.state.hasShare) {
+            if (this.props.shareState) {
                 return _react2.default.createElement(
                     'div',
                     { className: 'share' },
@@ -9563,7 +9552,7 @@ var Share = function (_React$Component) {
                                 { className: 'wrap' },
                                 _react2.default.createElement(
                                     'a',
-                                    { className: 'share-box-cancel', href: 'javascript:;', onClick: this.hideShare },
+                                    { className: 'share-box-cancel', href: 'javascript:;', onClick: this.props.hideShareBox },
                                     '\u53D6\u6D88'
                                 )
                             )
@@ -9612,7 +9601,7 @@ var _Share2 = _interopRequireDefault(_Share);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactDom.render)(_react2.default.createElement(_Share2.default, null), document.getElementById('share'));
+(0, _reactDom.render)(_react2.default.createElement(_Share2.default, { shareState: true, hideShareBox: null }), document.getElementById('share'));
 
 /***/ }),
 /* 83 */
