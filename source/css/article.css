@@ -1,0 +1,222 @@
+.article-banner {
+    width: 16rem;
+    height: 9rem;
+    position: relative;
+}
+
+.article-banner img {
+    width: 16rem;
+    height: 9rem;
+}
+
+.article-tips {
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 0;
+    top: 0.3rem;
+    padding: 0 0.5rem;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    color: #ccc;
+    font-size: 0.45rem;
+}
+
+.article-title {
+    width: 15rem;
+    margin: -1.3rem auto 0;
+    background-color: white;
+    padding: 0.3rem 0.6rem 0.5rem;
+    position: relative;
+    box-shadow: 0 1px 20px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article-title h1 {
+    line-height: 1.3rem;
+    font-size: 0.9rem;
+    color: #24292c;
+    font-weight: bold;
+}
+
+.article-info {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    padding-left: 1rem;
+    font-size: 0.5rem;
+    color: #8c8c8c;
+}
+
+.article-info span {
+    padding: 0 0.5rem;
+    font-size: 0.4rem;
+    color: #ccc;
+}
+
+.article-summary {
+    padding: 0.3rem 0.5rem;
+    line-height: 1.2rem;
+    font-size: 0.7rem;
+    color: #4f6773;
+}
+
+.article-flash {
+    width: 5.2rem;
+    height: 1rem;
+    margin: 0 auto;
+    background-image: url(http://i1.dd-img.com/assets/image/1491630479-b1ec5d076d1f4980-208w-40h.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.article-text {
+    margin-top: 0.2rem;
+}
+
+.article-text p {
+    line-height: 1.2rem;
+    font-size: 0.7rem;
+    color: #0e0f0f;
+    padding: 0.6rem 0.5rem;
+}
+
+.article-text p.image-caption {
+    padding: 0;
+}
+
+.article-text p.image-caption img {
+    width: 16rem;
+}
+
+.article-tags {
+    padding: 0 0.9rem;
+}
+
+.article-tags span {
+    height: 0.8rem;
+    border: 1px solid #dfdfdf;
+    display: inline-block;
+    position: relative;
+    border-left-width: 0;
+    line-height: 0.7rem;
+    font-size: 0.45rem;
+    color: #989898;
+    margin-right: 0.7rem;
+    padding: 0 0.3rem 0 0.1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.article-tags span::before {
+    content: "";
+    background-image: url(http://i1.dd-img.com/assets/image/1491632649-20f0c09b778ce9b1-16w-32h.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -1px;
+    left: -0.4rem;
+    height: 0.8rem;
+    width: 0.4rem;
+}
+
+.article-all {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.article-all a {
+    height: 1.5rem;
+    border: 1px solid #3595e7;
+    border-radius: 0.75rem;
+    display: inline-block;
+    color: #3595e7;
+    font-size: 0.6rem;
+    line-height: 1.5rem;
+    padding: 0 0.8rem;
+}
+
+.article-all i {
+    font-size: 0.6rem;
+}
+
+.article-interaction {
+    margin-top: 1.3rem;
+    height: 2.8rem;
+}
+
+.article-interaction .wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.article-interaction-item {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0 1.3rem;
+}
+
+.article-card {
+    margin-top: 1.2rem;
+}
+
+.article-card-content {
+    position: relative;
+    width: 15rem;
+    height: 4.1rem;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #e8e8e8;
+}
+
+.article-card-image {
+    width: 5.1rem;
+    height: 3.4rem;
+    margin: 0.35rem 0.5rem 0 0.35rem;
+}
+
+.article-card-image img {
+    width: 5.1rem;
+    height: 3.4rem;
+}
+
+.article-card-brand {
+    width: 0.9rem;
+    height: 0.9rem;
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+}
+
+.article-card-info {
+    line-height: 0.9rem;
+    color: #2f3942;
+    font-size: 0.6rem;
+    margin-top: 0.7rem;
+}
+
+.article-card-info .article-card-price {
+    color: #e80f0f;
+}
+
+.article-card-detail {
+    width: 3rem;
+    height: 1.3rem;
+    border-radius: 3px;
+    margin: 1.4rem 0.5rem 0 0;
+    background-color: #e63535;
+    color: white;
+    line-height: 1.3rem;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+.article-push {
+    margin-top: 0.9rem;
+}
+
+.article-push img {
+    width: 15rem;
+    height: 2.5rem;
+    display: block;
+    margin: 0 auto;
+}
