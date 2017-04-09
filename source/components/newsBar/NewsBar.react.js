@@ -41,7 +41,7 @@ class NewsBar extends React.Component {
                     <div className="wrap clearfix">
                         <div className="comment-input fn-left" onClick={this.showCommentBox}>说点什么吧</div>
                         <div className="comment-button fn-right">
-                            <a href="javascript:;" className="comment-item-number">
+                            <a href="#article-comment" className="comment-item-number">
                                 <span></span>
                                 <i>24</i>
                             </a>

@@ -12555,7 +12555,7 @@ var NewsBar = function (_React$Component) {
                             { className: 'comment-button fn-right' },
                             _react2.default.createElement(
                                 'a',
-                                { href: 'javascript:;', className: 'comment-item-number' },
+                                { href: '#article-comment', className: 'comment-item-number' },
                                 _react2.default.createElement('span', null),
                                 _react2.default.createElement(
                                     'i',
