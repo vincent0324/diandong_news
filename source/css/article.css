@@ -26,13 +26,27 @@
 .article-title {
     width: 15rem;
     margin: -1.3rem auto 0;
-    background-color: white;
-    padding: 0.3rem 0.6rem 0.5rem;
     position: relative;
     box-shadow: 0 1px 20px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 0.5rem;
+}
+
+.article-title::before {
+    width: 15rem;
+    height: 0.5rem;
+    background-image: url(http://i1.dd-img.com/assets/image/1491717834-d7bf59fa693e0e9d-600w-20h.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    content: "";
+    position: absolute;
 }
 
 .article-title h1 {
+    width: 15rem;
+    background-color: white;
+    padding: 0 0.6rem 0.5rem;
     line-height: 1.3rem;
     font-size: 0.9rem;
     color: #24292c;
