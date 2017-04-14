@@ -1,8 +1,8 @@
 import React from 'react';
 import $ from 'zepto';
-import './share.css';
+import './shareOverlay.css';
 
-class Share extends React.Component {
+class ShareOverlay extends React.Component {
 
     constructor(props) {
         super(props);
@@ -58,4 +58,4 @@ class Share extends React.Component {
     }
 };
 
-export default Share;
+export default ShareOverlay;

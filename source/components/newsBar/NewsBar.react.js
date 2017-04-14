@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentBox from './CommentBox.react';
-import Share from '../share/Share.react';
+import ShareOverlay from '../shareOverlay/ShareOverlay.react';
 import './newsBar.css';
 
 class NewsBar extends React.Component {
@@ -57,7 +57,7 @@ class NewsBar extends React.Component {
                 </div>
 
                 <CommentBox commentState={this.state.hasCommentBox} handleClick={this.hideCommentBox}/>
-                <Share shareState={this.state.hasShare} hideShareBox={this.hideShareBox}/>
+                <ShareOverlay shareState={this.state.hasShare} hideShareBox={this.hideShareBox}/>
             </div>
         );
     }

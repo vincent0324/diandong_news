@@ -9839,9 +9839,9 @@ var _CommentBox = __webpack_require__(84);
 
 var _CommentBox2 = _interopRequireDefault(_CommentBox);
 
-var _Share = __webpack_require__(86);
+var _ShareOverlay = __webpack_require__(86);
 
-var _Share2 = _interopRequireDefault(_Share);
+var _ShareOverlay2 = _interopRequireDefault(_ShareOverlay);
 
 __webpack_require__(193);
 
@@ -9867,7 +9867,8 @@ var NewsBar = function (_React$Component) {
         _this.hideShareBox = _this.hideShareBox.bind(_this);
         _this.state = {
             hasCommentBox: false,
-            hasShare: false
+            hasShare: false,
+            numberOfLikes: 0
         };
         return _this;
     }
@@ -9914,7 +9915,7 @@ var NewsBar = function (_React$Component) {
                             { className: 'comment-button fn-right' },
                             _react2.default.createElement(
                                 'a',
-                                { href: 'javascript:;', className: 'comment-item-number' },
+                                { href: '#article-comment', className: 'comment-item-number' },
                                 _react2.default.createElement('span', null),
                                 _react2.default.createElement(
                                     'i',
@@ -9941,7 +9942,7 @@ var NewsBar = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(_CommentBox2.default, { commentState: this.state.hasCommentBox, handleClick: this.hideCommentBox }),
-                _react2.default.createElement(_Share2.default, { shareState: this.state.hasShare, hideShareBox: this.hideShareBox })
+                _react2.default.createElement(_ShareOverlay2.default, { shareState: this.state.hasShare, hideShareBox: this.hideShareBox })
             );
         }
     }]);
@@ -10119,16 +10120,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Share = function (_React$Component) {
-    _inherits(Share, _React$Component);
+var ShareOverlay = function (_React$Component) {
+    _inherits(ShareOverlay, _React$Component);
 
-    function Share(props) {
-        _classCallCheck(this, Share);
+    function ShareOverlay(props) {
+        _classCallCheck(this, ShareOverlay);
 
-        return _possibleConstructorReturn(this, (Share.__proto__ || Object.getPrototypeOf(Share)).call(this, props));
+        return _possibleConstructorReturn(this, (ShareOverlay.__proto__ || Object.getPrototypeOf(ShareOverlay)).call(this, props));
     }
 
-    _createClass(Share, [{
+    _createClass(ShareOverlay, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
             (0, _zepto2.default)(document).on('click', '.share-box-weibo', function () {
@@ -10213,12 +10214,12 @@ var Share = function (_React$Component) {
         }
     }]);
 
-    return Share;
+    return ShareOverlay;
 }(_react2.default.Component);
 
 ;
 
-exports.default = Share;
+exports.default = ShareOverlay;
 
 /***/ }),
 /* 87 */
@@ -27032,8 +27033,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./share.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./share.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./shareOverlay.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./shareOverlay.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
