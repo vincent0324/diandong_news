@@ -6,6 +6,12 @@
     overflow: hidden;
     color: #aaa;
     padding-top: 0.8rem;
+    display: block;
+}
+
+.like-button.on {
+    border-color: #3595e7;
+    color: #3595e7;
 }
 
 .like-button-inner {
