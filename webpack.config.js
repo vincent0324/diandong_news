@@ -4,11 +4,11 @@ const path = require('path');
 module.exports = {
 
     entry: {
-        share: path.resolve(__dirname, 'source/components/share/app.js')
+        newsBar: path.resolve(__dirname, 'source/components/newsBar/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/share'),
+        path: path.resolve(__dirname, 'source/components/newsBar'),
         filename: '[name].debug.js'
     },
 

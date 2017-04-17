@@ -1,11 +1,22 @@
 import React from 'react';
 import $ from 'zepto';
+import IOSButton from './IOSButton.react'
 import './shareOverlay.css';
 
 class ShareOverlay extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            isIOS: false
+        }
+    }
+
+    componentWillMount() {
+        let u = navigator.userAgent;
+        let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
+        this.setState({isIOS: isIOS});
     }
 
     componentDidMount() {
@@ -15,10 +26,6 @@ class ShareOverlay extends React.Component {
 
         $(document).on('click', '.share-box-qzone', function() {
             $('.jiathis_button_qzone').trigger('click');
-        })
-
-        $(document).on('click', '.share-box-wechat', function() {
-            $('.jiathis_button_weixin').trigger('click');
         })
     }
 
@@ -38,10 +45,7 @@ class ShareOverlay extends React.Component {
                                     <span></span>
                                     <em>QQ空间</em>
                                 </a>
-                                <a href="javascript:;" className="share-box-item share-box-wechat">
-                                    <span></span>
-                                    <em>微信好友</em>
-                                </a>
+                                <IOSButton hasIOSButton={this.state.isIOS}/>
                             </div>
                         </div>
                         <div className="share-box-footer">

@@ -1,0 +1,34 @@
+.IOS-overlay-holder {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1500;
+}
+
+.IOS-overlay-image {
+    width: 16rem;
+    height: 18rem;
+    background-image: url(http://i1.dd-img.com/assets/image/1492412586-6ed142d53267776c-640w-720h.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    margin-left: -8rem;
+    z-index: 1400;
+}
+
+.IOS-overlay-title {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    position: fixed;
+    bottom: 18.5rem;
+    left: 0;
+    z-index: 1400;
+}
