@@ -1,0 +1,23 @@
+.share-button {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 50%;
+    overflow: hidden;
+    color: #aaa;
+    padding-top: 0.8rem;
+    display: block;
+}
+
+.share-button-inner {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+}
+
+.share-button-inner i {
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.1rem;
+}
