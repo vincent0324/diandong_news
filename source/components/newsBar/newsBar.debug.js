@@ -10120,27 +10120,29 @@ var NewsBarLikeButton = function (_React$Component) {
     }
 
     _createClass(NewsBarLikeButton, [{
-        key: "render",
-        value: function render() {
-
+        key: "getNumberOfLikes",
+        value: function getNumberOfLikes() {
             if (this.props.numberOfLikes > 0) {
                 return _react2.default.createElement(
-                    "a",
-                    { href: "javascript:;", className: "comment-like-number" },
-                    _react2.default.createElement("span", null),
-                    _react2.default.createElement(
-                        "i",
-                        null,
-                        this.props.numberOfLikes
-                    )
-                );
-            } else {
-                return _react2.default.createElement(
-                    "a",
-                    { href: "javascript:;", className: "comment-like-number" },
-                    _react2.default.createElement("span", null)
+                    "i",
+                    null,
+                    this.props.numberOfLikes
                 );
             }
+
+            return null;
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var numberOfLikesHtml = this.getNumberOfLikes();
+
+            return _react2.default.createElement(
+                "a",
+                { href: "javascript:;", className: "comment-like-number" },
+                _react2.default.createElement("span", null),
+                numberOfLikesHtml
+            );
         }
     }]);
 
