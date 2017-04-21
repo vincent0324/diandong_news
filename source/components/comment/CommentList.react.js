@@ -1,4 +1,6 @@
 import React from 'react';
+import CommentItem from './CommentItem.react';
+import './commentList.css';
 
 class CommentList extends React.Component {
 
@@ -12,9 +14,7 @@ class CommentList extends React.Component {
     }
 
     getCommentItem(id) {
-        return (
-            <div className="comment-item" key={id}>{this.props.comments[id].content}</div>
-        );
+        return (<CommentItem key={id} uimage={this.props.comments[id].uimage} uname={this.props.comments[id].uname} content={this.props.comments[id].content} created_at={this.props.comments[id].created_at} ups={this.props.comments[id].ups}/>);
     }
 
     render() {
