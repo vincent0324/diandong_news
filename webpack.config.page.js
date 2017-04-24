@@ -35,7 +35,8 @@ module.exports = {
             zepto: path.resolve(__dirname, 'source/lib/zepto/zepto'),
             cookie: path.resolve(__dirname, 'source/lib/cookie/cookie'),
             user: path.resolve(__dirname, 'source/lib/user/user'),
-            area: path.resolve(__dirname, 'source/lib/area/area')
+            area: path.resolve(__dirname, 'source/lib/area/area'),
+            tip: path.resolve(__dirname, 'source/lib/tip/tip')
         }
     }
 };

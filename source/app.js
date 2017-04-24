@@ -23,6 +23,10 @@ render(<Like articleId={articleId}/>, document.getElementById('article-interacti
 import Share from './components/share/Share.react';
 render(<Share/>, document.getElementById('article-interaction-share'));
 
+// comment
+import Comment from './components/comment/Comment.react';
+render(<Comment uuid={articleId}/>, document.getElementById('comment'));
+
 // NewsBar
 import NewsBar from './components/newsBar/NewsBar.react';
 render(<NewsBar contentId={contentId} articleId={articleId} uuid={uuid} />, document.getElementById('newsBar'));

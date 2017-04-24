@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'zepto';
-import CommentList from './CommentList.react';
+import CommentList from './List.react';
 import User from 'user';
 
 let user = new User();
@@ -11,6 +11,7 @@ class Comment extends React.Component {
         super(props);
         this.state = {
             total: 0,
+            list: [],
             comments: {}
         }
     }
@@ -34,7 +35,21 @@ class Comment extends React.Component {
             success: function(result) {
                 if (!result.state.err) {
                     if (result.data.total > 0) {
-                        this.setState({total: result.data.total, comments: result.data.content})
+                        let cache = result.data;
+
+                        for (let i = 0; i < cache.curPageList.length; i++) {
+                            let element = cache.curPageList[i];
+
+                            if (cache.content[element].refID !== 0) {
+                                cache.content[element].replyContent = cache.content[cache.content[element].refID].content;
+                                cache.content[element].replyName = cache.content[cache.content[element].refID].uname;
+                            } else {
+                                cache.content[element].replyContent = '';
+                                cache.content[element].replyName = '';
+                            }
+                        }
+
+                        this.setState({total: cache.total, list: cache.curPageList, comments: cache.content})
                     }
                 }
             }.bind(this)
@@ -48,7 +63,7 @@ class Comment extends React.Component {
     render() {
         return (
             <div className="comment-holder">
-                <CommentList total={this.state.total} comments={this.state.comments}/>
+                <CommentList total={this.state.total} list={this.state.list} comments={this.state.comments}/>
             </div>
         );
     }

@@ -409,3 +409,7 @@
 .item-type-video .article-new-tag {
     background-color: rgba(189, 158, 232, .6)
 }
+
+.article-comment .wrap {
+    padding: 0 0.5rem;
+}
