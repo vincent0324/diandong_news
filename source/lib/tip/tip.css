@@ -1,16 +1,19 @@
 .widget-tip {
     position: fixed;
+    width: 100%;
+    min-width: 16rem;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    margin: auto;
     text-align: center;
-    height: 3.4rem;
-    padding-top: 0.2rem;
-    z-index: 800;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+    z-index: 20000;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
+    transition: all 2s;
+    overflow: hidden;
+}
+
+.widget-tip .wrap {
+    font-size: 0.6rem;
+    line-height: 1rem;
+    padding: 0.5rem 0;
 }

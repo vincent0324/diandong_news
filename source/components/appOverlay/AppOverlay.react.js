@@ -1,9 +1,9 @@
 import React from 'react';
 import './appOverlay.css';
 
-function AppOverlay({
+const AppOverlay = ({
     url = 'http://m.diandong.com/app/'
-}) {
+}) => {
     return (
         <div className="app-overlay">
             <div className="wrap">

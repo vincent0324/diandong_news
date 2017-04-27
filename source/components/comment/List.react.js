@@ -11,7 +11,7 @@ class List extends React.Component {
     getCommentItem(id) {
         let itemProperty = this.props.comments[id];
 
-        return (<CommentItem key={id} cid={id} uuid={itemProperty.uuid} uimage={itemProperty.uimage} uname={itemProperty.uname} content={itemProperty.content} created_at={itemProperty.created_at} refID={itemProperty.refID} replyName={itemProperty.replyName} replyContent={itemProperty.replyContent} ups={itemProperty.ups}/>);
+        return (<CommentItem key={id} cid={id} uuid={itemProperty.uuid} uimage={itemProperty.uimage} uname={itemProperty.uname} content={itemProperty.content} created_at={itemProperty.created_at} refID={itemProperty.refID} replyName={itemProperty.replyName} replyTime={itemProperty.replyTime} replyContent={itemProperty.replyContent} ups={itemProperty.ups}/>);
     }
 
     render() {

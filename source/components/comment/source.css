@@ -1,0 +1,22 @@
+.comment-item-source {
+    background-color: #f5f5f5;
+    margin-top: 0.4rem;
+    font-size: 0.6rem;
+    line-height: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    position: relative;
+}
+
+.comment-source-name {
+    color: #3595e7;
+}
+
+.comment-source-time {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.4rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    color: #989898;
+    font-size: 0.45rem;
+}

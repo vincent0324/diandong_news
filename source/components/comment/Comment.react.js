@@ -43,9 +43,11 @@ class Comment extends React.Component {
                             if (cache.content[element].refID !== 0) {
                                 cache.content[element].replyContent = cache.content[cache.content[element].refID].content;
                                 cache.content[element].replyName = cache.content[cache.content[element].refID].uname;
+                                cache.content[element].replyTime = cache.content[cache.content[element].refID].created_at;
                             } else {
                                 cache.content[element].replyContent = '';
                                 cache.content[element].replyName = '';
+                                cache.content[element].replyTime = '';
                             }
                         }
 

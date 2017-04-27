@@ -1,5 +1,6 @@
 import React from 'react';
 import Like from './Like.react';
+import Source from './Source.react';
 import User from 'user';
 import Tip from 'tip';
 import './item.css';
@@ -52,9 +53,7 @@ class Item extends React.Component {
 
     getReplyContent() {
         if (this.props.refID !== 0) {
-            return (
-                <div className="comment-item-reply">{this.props.replyContent}</div>
-            );
+            return (<Source sourceContent={this.props.replyContent} sourceName={this.props.replyName} sourceTime={this.props.replyTime}/>);
         }
 
         return null;
