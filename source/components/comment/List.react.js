@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentItem from './Item.react';
+import {getDateDiff} from 'interval';
 
 class List extends React.Component {
 
@@ -10,8 +11,10 @@ class List extends React.Component {
 
     getCommentItem(id) {
         let itemProperty = this.props.comments[id];
+        let created_at = getDateDiff(itemProperty.created_at, true);
+        let replyTime = getDateDiff(itemProperty.replyTime, true);
 
-        return (<CommentItem key={id} cid={id} uuid={itemProperty.uuid} uimage={itemProperty.uimage} uname={itemProperty.uname} content={itemProperty.content} created_at={itemProperty.created_at} refID={itemProperty.refID} replyName={itemProperty.replyName} replyTime={itemProperty.replyTime} replyContent={itemProperty.replyContent} ups={itemProperty.ups}/>);
+        return (<CommentItem key={id} cid={id} uuid={itemProperty.uuid} uimage={itemProperty.uimage} uname={itemProperty.uname} content={itemProperty.content} created_at={created_at} refID={itemProperty.refID} replyName={itemProperty.replyName} replyTime={replyTime} replyContent={itemProperty.replyContent} ups={itemProperty.ups}/>);
     }
 
     render() {
