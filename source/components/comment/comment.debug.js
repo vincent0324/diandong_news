@@ -12961,7 +12961,7 @@ function getDateDiff(time, isTimestamp) {
     var result = '';
 
     if (diffValue < 0) {
-        return '未来';
+        return;
     }
 
     var monthC = diffValue / month;

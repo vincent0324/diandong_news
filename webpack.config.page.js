@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
 
     entry: {
-        home: path.resolve(__dirname, 'source/app.js')
+        news: path.resolve(__dirname, 'source/app.js')
     },
 
     output: {
@@ -36,7 +36,8 @@ module.exports = {
             cookie: path.resolve(__dirname, 'source/lib/cookie/cookie'),
             user: path.resolve(__dirname, 'source/lib/user/user'),
             area: path.resolve(__dirname, 'source/lib/area/area'),
-            tip: path.resolve(__dirname, 'source/lib/tip/tip')
+            tip: path.resolve(__dirname, 'source/lib/tip/Tip'),
+            interval: path.resolve(__dirname, 'source/lib/interval/Interval')
         }
     }
 };

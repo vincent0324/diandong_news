@@ -8,6 +8,7 @@ let uuid = document.getElementById('uuid').value;
 
 // style sheet
 import './css/common.css';
+import './css/article.css';
 
 // AppOverlay
 import AppOverlay from './components/appOverlay/AppOverlay.react';
