@@ -4,11 +4,11 @@ const path = require('path');
 module.exports = {
 
     entry: {
-        comment: path.resolve(__dirname, 'source/components/comment/app.js')
+        app: path.resolve(__dirname, 'source/components/app/app.js')
     },
 
     output: {
-        path: path.resolve(__dirname, 'source/components/comment'),
+        path: path.resolve(__dirname, 'source/components/app'),
         filename: '[name].debug.js'
     },
 
@@ -37,7 +37,8 @@ module.exports = {
             user: path.resolve(__dirname, 'source/lib/user/user'),
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/Tip'),
-            interval: path.resolve(__dirname, 'source/lib/interval/Interval')
+            interval: path.resolve(__dirname, 'source/lib/interval/Interval'),
+            ajaxform: path.resolve(__dirname, 'source/lib/ajaxform/ajaxform')
         }
     }
 };

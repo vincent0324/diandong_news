@@ -27,31 +27,31 @@ class CommentBox extends React.Component {
             Tip.info('请输入评论内容');
         } else {
             console.log(this.props.replyId);
-            //
-            // let data = {
-            //     content: this.state.commentValue,
-            //     iframeCross: 1,
-            //     uuid: this.props.uuid
-            // }
-            //
-            // if (this.props.replyId !== 0) {
-            //     data.refID = this.props.replyId;
-            // }
-            //
-            // new Ajaxform({
-            //     url: 'http://comment.diandong.com/comment/post',
-            //     data: data,
-            //     success: function(result) {
-            //         if (result.code === 0) {
-            //             // context.getCommentList(1, options.pageNum, options.uuid);
-            //             // $('.comment-content-textarea').val('');
-            //             // tip.success('评论成功！');
-            //             // context.replyId = 0;
-            //         } else {
-            //             // tip.info(result.description);
-            //         }
-            //     }
-            // });
+
+            let data = {
+                content: this.state.commentValue,
+                iframeCross: 1,
+                uuid: this.props.uuid
+            }
+
+            if (this.props.replyId !== 0) {
+                data.refID = this.props.replyId;
+            }
+
+            new Ajaxform({
+                url: 'http://comment.diandong.com/comment/post',
+                data: data,
+                success: function(result) {
+                    if (result.code === 0) {
+                        // context.getCommentList(1, options.pageNum, options.uuid);
+                        // $('.comment-content-textarea').val('');
+                        // tip.success('评论成功！');
+                        // context.replyId = 0;
+                    } else {
+                        // tip.info(result.description);
+                    }
+                }.bind(this)
+            });
         }
     }
 

@@ -1,0 +1,19 @@
+.article-interaction {
+    /*margin-top: 1.3rem;*/
+    height: 2.8rem;
+}
+
+.article-interaction .wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.article-interaction-item {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0 1.3rem;
+}
+
+.newsBar-placeholder {
+    height: 2rem;
+}
