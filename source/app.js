@@ -18,16 +18,9 @@ render(<AppOverlay />, document.getElementById('appOverlay'));
 import Header from './components/header/Header.react';
 render(<Header />, document.getElementById('header'));
 
-// interaction.
-import Like from './components/like/Like.react';
-render(<Like articleId={articleId}/>, document.getElementById('article-interaction-like'));
-import Share from './components/share/Share.react';
-render(<Share/>, document.getElementById('article-interaction-share'));
+// App.
+import App from './components/app/App.react';
+render(<App contentId={contentId} articleId={articleId} uuid={uuid}/>, document.getElementById('app'));
 
-// comment
-import Comment from './components/comment/Comment.react';
-render(<Comment uuid={articleId}/>, document.getElementById('comment'));
-
-// NewsBar
-import NewsBar from './components/newsBar/NewsBar.react';
-render(<NewsBar contentId={contentId} articleId={articleId} uuid={uuid} />, document.getElementById('newsBar'));
+import Article from './js/Article';
+let article = new Article();

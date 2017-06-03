@@ -19,7 +19,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'stage-0', 'react']
                 }
             }, {
                 test: /\.css$/,
@@ -37,7 +37,8 @@ module.exports = {
             user: path.resolve(__dirname, 'source/lib/user/user'),
             area: path.resolve(__dirname, 'source/lib/area/area'),
             tip: path.resolve(__dirname, 'source/lib/tip/Tip'),
-            interval: path.resolve(__dirname, 'source/lib/interval/Interval')
+            interval: path.resolve(__dirname, 'source/lib/interval/Interval'),
+            ajaxform: path.resolve(__dirname, 'source/lib/ajaxform/ajaxform')
         }
     }
 };

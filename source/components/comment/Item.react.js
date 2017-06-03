@@ -3,6 +3,7 @@ import Like from './Like.react';
 import Source from './Source.react';
 import User from 'user';
 import Tip from 'tip';
+import CommentBox from '../commentBox/CommentBox.react';
 import './item.css';
 
 let user = new User();
@@ -59,9 +60,9 @@ class Item extends React.Component {
         return null;
     }
 
-    componentWillUnmount() {
-        this.likeRequest.abort();
-    }
+    // componentWillUnmount() {
+    //     this.likeRequest.abort();
+    // }
 
     render() {
         let replyContent = this.getReplyContent();
@@ -78,7 +79,7 @@ class Item extends React.Component {
                             <div className="comment-item-time fn-left">{this.props.created_at}</div>
                             <div className="comment-item-button fn-right">
                                 <Like numberOfLikes={this.state.numberOfLikes} handleLike={() => this.handleLike()} hasLiked={this.state.hasLiked}/>
-                                <a className="comment-reply-button" href="javascript:;">
+                                <a className="comment-reply-button" href="javascript:;" onClick={this.props.handleReply} data-id={this.props.cid}>
                                     <i className="newsicon">&#xe7e0;</i>
                                 </a>
                             </div>

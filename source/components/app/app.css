@@ -1,6 +1,7 @@
 .article-interaction {
     /*margin-top: 1.3rem;*/
     height: 2.8rem;
+    margin-bottom: 9.9rem;
 }
 
 .article-interaction .wrap {
@@ -16,4 +17,37 @@
 
 .newsBar-placeholder {
     height: 2rem;
+}
+
+.article-comment-header {
+    height: 0.8rem;
+    line-height: 0.8rem;
+}
+
+.article-comment-header::before {
+    content: "";
+    float: left;
+    width: 0.15rem;
+    height: 0.8rem;
+    background-color: #3595e7;
+    margin-right: 0.4rem;
+}
+
+.article-comment-header h3 {
+    float: left;
+    height: 0.8rem;
+    font-size: 0.75rem;
+    color: #343b41;
+}
+
+.article-comment-header span {
+    float: left;
+    color: #8d8d8d;
+    font-size: 0.75rem;
+    height: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.comment {
+    margin-top: 0.7rem;
 }

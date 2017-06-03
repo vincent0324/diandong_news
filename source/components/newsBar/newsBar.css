@@ -6,6 +6,7 @@
     left: 0;
     width: 100%;
     min-width: 16rem;
+    z-index: 990;
 }
 
 .news-bar .wrap {

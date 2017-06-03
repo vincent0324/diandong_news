@@ -8,8 +8,6 @@ class NewsBar extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.showCommentBox = this.showCommentBox.bind(this);
-        // this.hideCommentBox = this.hideCommentBox.bind(this);
         this.showShareBox = this.showShareBox.bind(this);
         this.hideShareBox = this.hideShareBox.bind(this);
         this.state = {
@@ -80,7 +78,7 @@ class NewsBar extends React.Component {
                         <div className="comment-button fn-right">
                             <a href="#article-comment" className="comment-item-number">
                                 <span></span>
-                                <i>0</i>
+                                <i>{this.props.numberOfComments}</i>
                             </a>
                             <a href="javascript:;" className="comment-like-number" onClick={this.props.updateLike}>
                                 <span></span>
