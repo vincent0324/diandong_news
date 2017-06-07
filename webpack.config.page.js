@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -23,12 +24,30 @@ module.exports = {
                 }
             }, {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
+            }, {
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
             }
         ]
     },
 
-    // plugins: [],
+    plugins: [
+        new ExtractTextPlugin('[name].css'),
+
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false
+            },
+            compress: {
+                warnings: false
+            }
+        }),
+
+        new webpack.LoaderOptionsPlugin({minimize: true}),
+
+        new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify('production')})
+    ],
 
     resolve: {
         alias: {
