@@ -12653,6 +12653,7 @@ var App = function (_React$Component) {
         _this.handleReply = _this.handleReply.bind(_this);
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
+        _this.getMoreComments = _this.getMoreComments.bind(_this);
 
         _this.state = {
             hasCommentBox: false,
@@ -12663,6 +12664,7 @@ var App = function (_React$Component) {
             comments: {},
             replyId: 0,
             commentValue: '',
+            commentPage: 5,
             isLogined: false
         };
         return _this;
@@ -12688,7 +12690,7 @@ var App = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.renderLike();
-            this.getComments();
+            this.getComments(this.state.commentPage);
         }
     }, {
         key: 'getNumberOfLikes',
@@ -12792,10 +12794,12 @@ var App = function (_React$Component) {
         }
     }, {
         key: 'getComments',
-        value: function getComments() {
+        value: function getComments(page) {
+            var pageNum = page + '';
+
             var data = {
                 page: '1',
-                pageNum: '5',
+                pageNum: pageNum,
                 uuid: this.props.uuid
             };
 
@@ -12828,6 +12832,9 @@ var App = function (_React$Component) {
                             }
 
                             this.setState({ numberOfComments: cache.total, commentList: cache.curPageList, comments: cache.content });
+                            this.setState({
+                                commentPage: this.state.commentPage + 5
+                            });
                         }
                     }
                 }.bind(this)
@@ -12868,7 +12875,7 @@ var App = function (_React$Component) {
                             _tip2.default.info('发布成功');
                             var context = this;
                             setTimeout(function () {
-                                context.getComments();
+                                context.getComments(this.state.commentPage);
                             }, 3000);
                         } else {
                             //
@@ -12886,6 +12893,11 @@ var App = function (_React$Component) {
         key: 'hideCommentBox',
         value: function hideCommentBox() {
             this.setState({ hasCommentBox: false });
+        }
+    }, {
+        key: 'getMoreComments',
+        value: function getMoreComments() {
+            this.getComments(this.state.commentPage);
         }
     }, {
         key: 'render',
@@ -12926,9 +12938,25 @@ var App = function (_React$Component) {
                         'div',
                         { className: 'wrap' },
                         _react2.default.createElement(
+                            'header',
+                            { className: 'article-comment-header' },
+                            _react2.default.createElement(
+                                'h3',
+                                null,
+                                '\u7F51\u53CB\u8BC4\u8BBA'
+                            ),
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                '(',
+                                this.state.numberOfComments,
+                                ')'
+                            )
+                        ),
+                        _react2.default.createElement(
                             'div',
-                            { id: 'comment' },
-                            _react2.default.createElement(_Comment2.default, { total: this.state.numberOfComments, list: this.state.commentList, comments: this.state.comments, handleReply: this.handleReply })
+                            { id: 'comment', className: 'comment' },
+                            _react2.default.createElement(_Comment2.default, { commentPage: this.state.commentPage, total: this.state.numberOfComments, list: this.state.commentList, comments: this.state.comments, handleReply: this.handleReply, getMoreComments: this.getMoreComments })
                         )
                     )
                 ),
@@ -13031,15 +13059,31 @@ var Comment = function (_React$Component) {
     _createClass(Comment, [{
         key: 'render',
         value: function render() {
+            if (this.props.total > 5 && this.props.commentPage < this.props.total) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'comment-holder' },
+                    _react2.default.createElement(_List2.default, { handleReply: this.props.handleReply, total: this.props.total, list: this.props.list, comments: this.props.comments }),
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'javascript:;', className: 'get-more-comments', onClick: this.props.getMoreComments },
+                        '\u67E5\u770B\u66F4\u591A\u8BC4\u8BBA'
+                    )
+                );
+            }
+
+            if (this.props.commentPage >= this.props.total) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'comment-holder' },
+                    _react2.default.createElement(_List2.default, { handleReply: this.props.handleReply, total: this.props.total, list: this.props.list, comments: this.props.comments })
+                );
+            }
+
             return _react2.default.createElement(
                 'div',
                 { className: 'comment-holder' },
-                _react2.default.createElement(_List2.default, { handleReply: this.props.handleReply, total: this.props.total, list: this.props.list, comments: this.props.comments }),
-                _react2.default.createElement(
-                    'a',
-                    { href: 'javascript:;', className: 'get-more-comments' },
-                    '\u67E5\u770B\u66F4\u591A\u8BC4\u8BBA'
-                )
+                _react2.default.createElement(_List2.default, { handleReply: this.props.handleReply, total: this.props.total, list: this.props.list, comments: this.props.comments })
             );
         }
     }]);
@@ -16123,7 +16167,7 @@ exports = module.exports = __webpack_require__(10)(undefined);
 
 
 // module
-exports.push([module.i, ".article-interaction {\n    /*margin-top: 1.3rem;*/\n    height: 2.8rem;\n    margin-bottom: 8.7rem;\n}\n\n.article-interaction .wrap {\n    display: flex;\n    justify-content: center;\n}\n\n.article-interaction-item {\n    width: 2.8rem;\n    height: 2.8rem;\n    margin: 0 1.3rem;\n}\n\n.newsBar-placeholder {\n    height: 2rem;\n}\n", ""]);
+exports.push([module.i, ".article-interaction {\n    /*margin-top: 1.3rem;*/\n    height: 2.8rem;\n    margin-bottom: 9.9rem;\n}\n\n.article-interaction .wrap {\n    display: flex;\n    justify-content: center;\n}\n\n.article-interaction-item {\n    width: 2.8rem;\n    height: 2.8rem;\n    margin: 0 1.3rem;\n}\n\n.newsBar-placeholder {\n    height: 2rem;\n}\n\n.article-comment-header {\n    height: 0.8rem;\n    line-height: 0.8rem;\n}\n\n.article-comment-header::before {\n    content: \"\";\n    float: left;\n    width: 0.15rem;\n    height: 0.8rem;\n    background-color: #3595e7;\n    margin-right: 0.4rem;\n}\n\n.article-comment-header h3 {\n    float: left;\n    height: 0.8rem;\n    font-size: 0.75rem;\n    color: #343b41;\n}\n\n.article-comment-header span {\n    float: left;\n    color: #8d8d8d;\n    font-size: 0.75rem;\n    height: 0.8rem;\n    margin-left: 0.5rem;\n}\n\n.comment {\n    margin-top: 0.7rem;\n}\n", ""]);
 
 // exports
 

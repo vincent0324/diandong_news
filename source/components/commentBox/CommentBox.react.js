@@ -7,7 +7,24 @@ class CommentBox extends React.Component {
         super(props);
     }
 
+    getPublishButtonStatus() {
+        if (this.props.isLogined) {
+            return (
+                <a href="javascript:;" className={this.props.commentValue === ''
+                    ? "comment-box-button submit-button disabled"
+                    : "comment-box-button submit-button"} onClick={this.props.handleSubmit}>发布</a>
+            );
+        } else {
+            let redirectUtl = 'http://passport.diandong.com/ark/login?redirect=' + location.href;
+            return (
+                <a href={redirectUtl} className="comment-box-button submit-button">发布</a>
+            );
+        }
+    }
+
     render() {
+        let publishButtonHtml = this.getPublishButtonStatus();
+
         if (this.props.commentState) {
             return (
                 <div className="comment-box">
@@ -15,9 +32,7 @@ class CommentBox extends React.Component {
                         <div className="wrap clearfix">
                             <h3>评论</h3>
                             <a href="javascript:;" className="comment-box-button cancel-button" onClick={this.props.hideCommentBox}>取消</a>
-                            <a href="javascript:;" className={this.props.commentValue === ''
-                                ? "comment-box-button submit-button disabled"
-                                : "comment-box-button submit-button"} onClick={this.props.handleSubmit}>发布</a>
+                            {publishButtonHtml}
                         </div>
                     </header>
 

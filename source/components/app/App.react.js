@@ -23,6 +23,7 @@ class App extends React.Component {
         this.handleReply = this.handleReply.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.getMoreComments = this.getMoreComments.bind(this);
 
         this.state = {
             hasCommentBox: false,
@@ -33,6 +34,7 @@ class App extends React.Component {
             comments: {},
             replyId: 0,
             commentValue: '',
+            commentPage: 5,
             isLogined: false
         };
     }
@@ -53,7 +55,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.renderLike();
-        this.getComments();
+        this.getComments(this.state.commentPage);
     }
 
     getNumberOfLikes() {
@@ -152,10 +154,12 @@ class App extends React.Component {
         }
     }
 
-    getComments() {
+    getComments(page) {
+        let pageNum = page + '';
+
         let data = {
             page: '1',
-            pageNum: '5',
+            pageNum: pageNum,
             uuid: this.props.uuid
         }
 
@@ -187,7 +191,10 @@ class App extends React.Component {
                             }
                         }
 
-                        this.setState({numberOfComments: cache.total, commentList: cache.curPageList, comments: cache.content})
+                        this.setState({numberOfComments: cache.total, commentList: cache.curPageList, comments: cache.content});
+                        this.setState({
+                            commentPage: this.state.commentPage + 5
+                        });
                     }
                 }
             }.bind(this)
@@ -225,7 +232,7 @@ class App extends React.Component {
                         Tip.info('发布成功');
                         let context = this;
                         setTimeout(function() {
-                            context.getComments();
+                            context.getComments(this.state.commentPage);
                         }, 3000);
                     } else {
                         //
@@ -244,7 +251,7 @@ class App extends React.Component {
     }
 
     getMoreComments() {
-        //
+        this.getComments(this.state.commentPage);
     }
 
     render() {
@@ -272,7 +279,7 @@ class App extends React.Component {
                             <span>({this.state.numberOfComments})</span>
                         </header>
                         <div id="comment" className="comment">
-                            <Comment total={this.state.numberOfComments} list={this.state.commentList} comments={this.state.comments} handleReply={this.handleReply} getMoreComments={this.getMoreComments}/>
+                            <Comment commentPage={this.state.commentPage} total={this.state.numberOfComments} list={this.state.commentList} comments={this.state.comments} handleReply={this.handleReply} getMoreComments={this.getMoreComments}/>
                         </div>
                     </div>
                 </div>
@@ -282,7 +289,7 @@ class App extends React.Component {
                 </div>
 
                 <div id="commentBox">
-                    <CommentBox uuid={this.props.uuid} commentState={this.state.hasCommentBox} hideCommentBox={this.hideCommentBox} replyId={this.state.replyId} handleSubmit={this.handleSubmit} handleChange={this.handleChange} commentValue={this.state.commentValue}/>
+                    <CommentBox isLogined={this.state.isLogined} uuid={this.props.uuid} commentState={this.state.hasCommentBox} hideCommentBox={this.hideCommentBox} replyId={this.state.replyId} handleSubmit={this.handleSubmit} handleChange={this.handleChange} commentValue={this.state.commentValue}/>
                 </div>
             </div>
         );

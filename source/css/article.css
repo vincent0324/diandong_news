@@ -416,11 +416,11 @@
     background-color: rgba(239, 15, 15, .6)
 }
 
-.item-type-test .article-new-tag {
+.item-type-guide .article-new-tag {
     background-color: rgba(216, 97, 25, .6)
 }
 
-.item-type-video .article-new-tag {
+.item-type-use .article-new-tag {
     background-color: rgba(189, 158, 232, .6)
 }
 
