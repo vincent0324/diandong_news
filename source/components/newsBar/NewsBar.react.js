@@ -17,14 +17,6 @@ class NewsBar extends React.Component {
         };
     }
 
-    // showCommentBox() {
-    //     this.setState({hasCommentBox: true});
-    // }
-
-    // hideCommentBox() {
-    //     this.setState({hasCommentBox: false});
-    // }
-
     showShareBox() {
         this.setState({hasShare: true});
     }
@@ -67,14 +59,29 @@ class NewsBar extends React.Component {
         return null;
     }
 
+    getLoginStatus() {
+        if (!this.props.isLogined) {
+            let redirectUtl = 'http://passport.diandong.com/ark/login?redirect=' + location.href;
+
+            return (
+                <a href={redirectUtl} className="comment-input fn-left">说点什么吧</a>
+            );
+        }
+
+        return (
+            <div className="comment-input fn-left" onClick={this.props.showCommentBox}>说点什么吧</div>
+        );
+    }
+
     render() {
         let numberOfLikesHtml = this.getNumberOfLikes();
+        let loginStatusHtml = this.getLoginStatus();
 
         return (
             <div>
                 <div className="news-bar">
                     <div className="wrap clearfix">
-                        <div className="comment-input fn-left" onClick={this.props.showCommentBox}>说点什么吧</div>
+                        {loginStatusHtml}
                         <div className="comment-button fn-right">
                             <a href="#article-comment" className="comment-item-number">
                                 <span></span>

@@ -1,7 +1,19 @@
 .article-interaction {
-    /*margin-top: 1.3rem;*/
     height: 2.8rem;
     margin-bottom: 9.9rem;
+}
+
+.article-interaction.with-ad {
+    margin-bottom: 5.8rem;
+}
+
+.article-interaction.with-card {
+    margin-bottom: 7.4rem;
+}
+
+.article-interaction.with-nothing {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .article-interaction .wrap {

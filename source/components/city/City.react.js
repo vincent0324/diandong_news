@@ -11,7 +11,7 @@ class City extends React.Component {
 
         this.state = {
             currentCity: '北京'
-        }
+        };
     }
 
     getCurrentCityFromCookie() {

@@ -85,6 +85,17 @@
 
 .article-text {
     margin-top: 0.2rem;
+    position: relative;
+}
+
+.article-text.hidden-status::after {
+    height: 5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+    content: "";
 }
 
 .article-text p {
@@ -147,26 +158,6 @@
     font-size: 0.6rem;
     line-height: 1.5rem;
     padding: 0 0.8rem;
-}
-
-.article-all i {
-    font-size: 0.6rem;
-}
-
-.article-interaction {
-    margin-top: 1.3rem;
-    height: 2.8rem;
-}
-
-.article-interaction .wrap {
-    display: flex;
-    justify-content: center;
-}
-
-.article-interaction-item {
-    width: 2.8rem;
-    height: 2.8rem;
-    margin: 0 1.3rem;
 }
 
 .article-card {

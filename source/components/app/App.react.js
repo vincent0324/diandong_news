@@ -26,6 +26,8 @@ class App extends React.Component {
         this.getMoreComments = this.getMoreComments.bind(this);
 
         this.state = {
+            card: false,
+            ad: false,
             hasCommentBox: false,
             numberOfLikes: 0,
             hasLiked: false,
@@ -56,6 +58,14 @@ class App extends React.Component {
     componentDidMount() {
         this.renderLike();
         this.getComments(this.state.commentPage);
+
+        if ($('.article-card').length > 0) {
+            this.setState({card: true});
+        }
+
+        if ($('.article-push-holder').length > 0) {
+            this.setState({ad: true});
+        }
     }
 
     getNumberOfLikes() {
@@ -254,10 +264,24 @@ class App extends React.Component {
         this.getComments(this.state.commentPage);
     }
 
+    stupidCode() {
+        if (this.state.card && this.state.ad) {
+            return 'article-interaction';
+        } else if (this.state.card && !this.state.ad) {
+            return 'article-interaction with-card';
+        } else if (!this.state.card && this.state.ad) {
+            return 'article-interaction with-ad';
+        } else {
+            return 'article-interaction with-nothing';
+        }
+    }
+
     render() {
+        let stupidClassName = this.stupidCode();
+
         return (
             <div className="app">
-                <div className="article-interaction">
+                <div className={stupidClassName}>
                     <div className="wrap">
                         <div className="article-interaction-item">
                             <div id="article-interaction-like">
@@ -285,7 +309,7 @@ class App extends React.Component {
                 </div>
 
                 <div id="newsBar">
-                    <NewsBar numberOfLikes={this.state.numberOfLikes} numberOfComments={this.state.numberOfComments} updateLike={this.handleUpdateChange} contentId={this.props.contentId} articleId={this.props.articleId} uuid={this.props.uuid} showCommentBox={this.showCommentBox}/>
+                    <NewsBar isLogined={this.state.isLogined} numberOfLikes={this.state.numberOfLikes} numberOfComments={this.state.numberOfComments} updateLike={this.handleUpdateChange} contentId={this.props.contentId} articleId={this.props.articleId} uuid={this.props.uuid} showCommentBox={this.showCommentBox}/>
                 </div>
 
                 <div id="commentBox">

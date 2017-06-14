@@ -30,6 +30,10 @@ class Article {
         this.hideArticleText();
         this.render(1);
         this.bindEvent();
+
+        if ($('.article-card').length == 0 && $('.article-push-holder').length > 0) {
+            $('.article-push').css('top', '4rem');
+        }
     }
 
     bindEvent() {
@@ -48,6 +52,7 @@ class Article {
         $('.article-all a').on('click', function() {
             $('.article-text p').removeClass('fn-hide');
             $('.article-all').addClass('fn-hide');
+            $('.article-text').removeClass('hidden-status');
         });
     }
 
@@ -69,7 +74,7 @@ class Article {
                 let newsHtml = '';
 
                 for (let i = 0; i < newsLength; i++) {
-                    let publishTime = getDateDiff((res.data[i].published + '000'), true);
+                    let publishTime = getDateDiff(parseInt(res.data[i].created) * 1000, false);
                     let className = newsClass[res.data[i].catid];
                     let typeName = newsTypeName[res.data[i].catid];
 
@@ -80,7 +85,7 @@ class Article {
                             '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
                             '</div>',
                             '<div class="article-new-info fn-right">',
-                            '<div class="article-new-title"><a href="">' + res.data[i].title + '</a></div>',
+                            '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
                             '<div class="article-new-time">' + publishTime + '</div>',
                             '</div>',
                             '<div class="article-new-tag">' + typeName + '</div>',
@@ -94,7 +99,7 @@ class Article {
                             '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
                             '</div>',
                             '<div class="article-new-info fn-right">',
-                            '<div class="article-new-title"><a href="">' + res.data[i].title + '</a></div>',
+                            '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
                             '<div class="article-new-time">' + publishTime + '</div>',
                             '</div>',
                             '<div class="article-new-tag">' + typeName + '</div>',
@@ -119,6 +124,8 @@ class Article {
             for (let i = 10; i < textLength; i++) {
                 $('.article-text p').eq(i).addClass('fn-hide');
             }
+
+            $('.article-text').addClass('hidden-status');
         } else {
             $('.article-all').addClass('fn-hide');
         }

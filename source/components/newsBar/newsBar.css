@@ -23,6 +23,7 @@
     color: #c5c5c5;
     padding-left: 0.4rem;
     line-height: 1.2rem;
+    display: block;
 }
 
 .comment-button {
