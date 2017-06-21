@@ -9,6 +9,15 @@ class Comment extends React.Component {
     }
 
     render() {
+        if (this.props.total === 0) {
+            return (
+                <div className="comment-holder">
+                    <div className="no-comment-sign"><i className="icon">&#xe64a;</i></div>
+                    <div className="no-comment-text">快抢沙发喽！</div>
+                </div>
+            );
+        }
+
         if (this.props.total > 5 && this.props.commentPage < this.props.total) {
             return (
                 <div className="comment-holder">

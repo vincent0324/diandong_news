@@ -2,7 +2,7 @@ import React from 'react';
 import './appOverlay.css';
 
 const AppOverlay = ({
-    url = 'http://m.diandong.com/app/'
+    url = 'http://m.diandong.com/app/?f=ArticleTop'
 }) => {
     return (
         <div className="app-overlay">
@@ -17,6 +17,6 @@ const AppOverlay = ({
             </div>
         </div>
     );
-}
+};
 
 export default AppOverlay;

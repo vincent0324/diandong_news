@@ -33,7 +33,7 @@ class ShareOverlay extends React.Component {
         if (this.props.shareState) {
             return (
                 <div className="share">
-                    <div className="share-mask"></div>
+                    <div className="share-mask" onClick={this.props.hideShareBox}></div>
                     <div className="share-box">
                         <div className="share-box-list">
                             <div className="wrap">

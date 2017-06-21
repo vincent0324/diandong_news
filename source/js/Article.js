@@ -27,6 +27,7 @@ class Article {
     }
 
     init() {
+        this.renderTime();
         this.hideArticleText();
         this.render(1);
         this.bindEvent();
@@ -34,6 +35,13 @@ class Article {
         if ($('.article-card').length == 0 && $('.article-push-holder').length > 0) {
             $('.article-push').css('top', '4rem');
         }
+    }
+
+    renderTime() {
+        var publishTimeStamp = document.getElementById('published').value;
+        var publishTime = getDateDiff((publishTimeStamp + '000'), false);
+
+        $('.article-info strong').html(publishTime);
     }
 
     bindEvent() {
@@ -74,24 +82,39 @@ class Article {
                 let newsHtml = '';
 
                 for (let i = 0; i < newsLength; i++) {
-                    let publishTime = getDateDiff(parseInt(res.data[i].created) * 1000, false);
+                    let publishTime = getDateDiff(parseInt(res.data[i].published) * 1000, false);
                     let className = newsClass[res.data[i].catid];
                     let typeName = newsTypeName[res.data[i].catid];
 
-                    if (i === 6 && page === 1) {
-                        newsHtml += [
-                            '<li class="article-new-item ' + className + '">',
-                            '<div class="article-new-image fn-left">',
-                            '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
-                            '</div>',
-                            '<div class="article-new-info fn-right">',
-                            '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
-                            '<div class="article-new-time">' + publishTime + '</div>',
-                            '</div>',
-                            '<div class="article-new-tag">' + typeName + '</div>',
-                            '</li>',
-                            '<li><div class="news-push" id="agency_shower_58"></div></li>'
-                        ].join('');
+                    if (page === 1) {
+                        if (i === 6) {
+                            newsHtml += [
+                                '<li class="article-new-item ' + className + '">',
+                                '<div class="article-new-image fn-left">',
+                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
+                                '</div>',
+                                '<div class="article-new-info fn-right">',
+                                '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
+                                '<div class="article-new-time">' + publishTime + '</div>',
+                                '</div>',
+                                '<div class="article-new-tag">' + typeName + '</div>',
+                                '</li>',
+                                '<li><div class="news-push" id="agency_shower_58"></div></li>'
+                            ].join('');
+                        } else {
+                            newsHtml += [
+                                '<li class="article-new-item ' + className + '">',
+                                '<div class="article-new-image fn-left">',
+                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
+                                '</div>',
+                                '<div class="article-new-info fn-right">',
+                                '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
+                                '<div class="article-new-time">' + publishTime + '</div>',
+                                '</div>',
+                                '<div class="article-new-tag">' + typeName + '</div>',
+                                '</li>'
+                            ].join('');
+                        }
                     } else {
                         newsHtml += [
                             '<li class="article-new-item ' + className + '">',
@@ -101,6 +124,7 @@ class Article {
                             '<div class="article-new-info fn-right">',
                             '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
                             '<div class="article-new-time">' + publishTime + '</div>',
+                            '<a href="http://m.diandong.com/app/?f=Articlebuttom" class="article-app-link">客户端阅读</a href="">',
                             '</div>',
                             '<div class="article-new-tag">' + typeName + '</div>',
                             '</li>'

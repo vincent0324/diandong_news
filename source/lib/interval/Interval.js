@@ -9,6 +9,7 @@ export function getDateDiff(time, isTimestamp) {
     const day = hour * 24;
     const halfamonth = day * 15;
     const month = day * 30;
+    const year = day * 365;
     let now = new Date().getTime();
     let diffValue = now - dateTimeStamp;
     let result = '';
@@ -17,13 +18,15 @@ export function getDateDiff(time, isTimestamp) {
         return;
     }
 
+    let yearC = diffValue / year;
     let monthC = diffValue / month;
     let weekC = diffValue / (7 * day);
     let dayC = diffValue / day;
     let hourC = diffValue / hour;
     let minC = diffValue / minute;
-
-    if (monthC >= 1) {
+    if (yearC >= 1) {
+        result = '' + parseInt(yearC) + "年前";
+    } else if (monthC >= 1) {
         result = '' + parseInt(monthC) + "月前";
     } else if (weekC >= 1) {
         result = '' + parseInt(weekC) + "周前";

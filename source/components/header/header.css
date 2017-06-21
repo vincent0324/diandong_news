@@ -42,9 +42,10 @@
     color: #506772;
     border-left: 1px solid #dcdcdc;
     padding-left: 0.5rem;
+    line-height: 1.1rem;
 }
 
-.slogan h2 {
+.slogan a {
     color: #506772;
     font-size: 0.75rem;
 }

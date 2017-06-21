@@ -11,3 +11,22 @@
     background-color: white;
     margin: 0.9rem auto 0;
 }
+
+.no-comment-sign {
+    margin: 1rem auto 0;
+    width: 3.35rem;
+    height: 3.2rem;
+    color: #d8d8d8;
+    text-align: center;
+    line-height: 3.2rem;
+}
+
+.no-comment-sign i {
+    font-size: 3.3rem;
+}
+
+.no-comment-text {
+    color: #b7b7b7;
+    font-size: 0.6rem;
+    text-align: center;
+}

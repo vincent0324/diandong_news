@@ -52,11 +52,35 @@ class NewsBar extends React.Component {
     getNumberOfLikes() {
         if (this.props.numberOfLikes > 0) {
             return (
-                <i>{this.props.numberOfLikes}</i>
+                <a href="javascript:;" className="comment-like-number" onClick={this.props.updateLike}>
+                    <span></span>
+                    <i>{this.props.numberOfLikes}</i>
+                </a>
             );
         }
 
-        return null;
+        return (
+            <a href="javascript:;" className="comment-like-number" onClick={this.props.updateLike}>
+                <span></span>
+            </a>
+        );
+    }
+
+    getNumberOfComments() {
+        if (this.props.numberOfComments > 0) {
+            return (
+                <a href="#article-comment" className="comment-item-number">
+                    <span></span>
+                    <i>{this.props.numberOfComments}</i>
+                </a>
+            );
+        }
+
+        return (
+            <a href="#article-comment" className="comment-item-number">
+                <span></span>
+            </a>
+        );
     }
 
     getLoginStatus() {
@@ -75,6 +99,7 @@ class NewsBar extends React.Component {
 
     render() {
         let numberOfLikesHtml = this.getNumberOfLikes();
+        let numberOfCommentsHtml = this.getNumberOfComments();
         let loginStatusHtml = this.getLoginStatus();
 
         return (
@@ -83,14 +108,8 @@ class NewsBar extends React.Component {
                     <div className="wrap clearfix">
                         {loginStatusHtml}
                         <div className="comment-button fn-right">
-                            <a href="#article-comment" className="comment-item-number">
-                                <span></span>
-                                <i>{this.props.numberOfComments}</i>
-                            </a>
-                            <a href="javascript:;" className="comment-like-number" onClick={this.props.updateLike}>
-                                <span></span>
-                                {numberOfLikesHtml}
-                            </a>
+                            {numberOfCommentsHtml}
+                            {numberOfLikesHtml}
                             <a href="javascript:;" className="comment-share" onClick={this.showShareBox}>
                                 <span></span>
                             </a>
