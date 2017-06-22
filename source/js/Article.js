@@ -91,7 +91,7 @@ class Article {
                             newsHtml += [
                                 '<li class="article-new-item ' + className + '">',
                                 '<div class="article-new-image fn-left">',
-                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
+                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '@300_200h.src"></a>',
                                 '</div>',
                                 '<div class="article-new-info fn-right">',
                                 '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
@@ -105,7 +105,7 @@ class Article {
                             newsHtml += [
                                 '<li class="article-new-item ' + className + '">',
                                 '<div class="article-new-image fn-left">',
-                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
+                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '@300_200h.src"></a>',
                                 '</div>',
                                 '<div class="article-new-info fn-right">',
                                 '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
@@ -119,7 +119,7 @@ class Article {
                         newsHtml += [
                             '<li class="article-new-item ' + className + '">',
                             '<div class="article-new-image fn-left">',
-                            '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '"></a>',
+                            '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '@300_200h.src"></a>',
                             '</div>',
                             '<div class="article-new-info fn-right">',
                             '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',

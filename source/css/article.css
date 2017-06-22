@@ -23,7 +23,7 @@
     padding: 0 0.5rem;
     border-top-left-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
-    color: #ccc;
+    color: white;
     font-size: 0.45rem;
 }
 
@@ -58,11 +58,10 @@
 }
 
 .article-info {
-    height: 1.4rem;
-    line-height: 1.4rem;
     padding-left: 1rem;
     font-size: 0.5rem;
     color: #8c8c8c;
+    padding-top: 0.6rem;
 }
 
 .article-info strong {
