@@ -7,6 +7,7 @@ import CommentBox from '../commentBox/CommentBox.react';
 import Ajaxform from 'ajaxform';
 import Tip from 'tip';
 import User from 'user';
+import $ from 'zepto';
 
 let user = new User();
 
@@ -111,9 +112,16 @@ class App extends React.Component {
         this.getNumberOfLikes();
     }
 
-    handleUpdateChange() {
+    handleUpdateChange(event) {
         let currentNumber = this.state.numberOfLikes;
         let articleId = this.props.articleId;
+        let self = $(event.currentTarget);
+
+        self.find('span').addClass('niceIn');
+
+        setTimeout(function() {
+            self.find('span').removeClass('niceIn');
+        }, 1000);
 
         if (this.state.hasLiked) {
 

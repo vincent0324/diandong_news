@@ -52,7 +52,7 @@ class Article {
             var winTop = document.body.scrollTop;
             var winHeight = $(window).height();
 
-            if (docHeight - winTop - winHeight <= 100 && context.status) {
+            if (docHeight - winTop - winHeight <= 200 && context.status) {
                 context.render(context.page);
             }
         });
