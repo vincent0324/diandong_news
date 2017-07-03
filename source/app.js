@@ -22,5 +22,6 @@ render(<Header />, document.getElementById('header'));
 import App from './components/app/App.react';
 render(<App contentId={contentId} articleId={articleId} uuid={uuid}/>, document.getElementById('app'));
 
+// Article
 import Article from './js/Article';
 let article = new Article();
