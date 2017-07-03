@@ -86,35 +86,20 @@ class Article {
                     let className = newsClass[res.data[i].catid];
                     let typeName = newsTypeName[res.data[i].catid];
 
-                    if (page === 1) {
-                        if (i === 6) {
-                            newsHtml += [
-                                '<li class="article-new-item ' + className + '">',
-                                '<div class="article-new-image fn-left">',
-                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '@300_200h.src"></a>',
-                                '</div>',
-                                '<div class="article-new-info fn-right">',
-                                '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
-                                '<div class="article-new-time">' + publishTime + '</div>',
-                                '</div>',
-                                '<div class="article-new-tag">' + typeName + '</div>',
-                                '</li>',
-                                '<li><div class="news-push" id="agency_shower_58"></div></li>'
-                            ].join('');
-                        } else {
-                            newsHtml += [
-                                '<li class="article-new-item ' + className + '">',
-                                '<div class="article-new-image fn-left">',
-                                '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '@300_200h.src"></a>',
-                                '</div>',
-                                '<div class="article-new-info fn-right">',
-                                '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
-                                '<div class="article-new-time">' + publishTime + '</div>',
-                                '</div>',
-                                '<div class="article-new-tag">' + typeName + '</div>',
-                                '</li>'
-                            ].join('');
-                        }
+                    if (i === 6 && page === 1) {
+                        newsHtml += [
+                            '<li class="article-new-item ' + className + '">',
+                            '<div class="article-new-image fn-left">',
+                            '<a href="' + res.data[i].url + '"><img src="' + res.data[i].thumb + '@300_200h.src"></a>',
+                            '</div>',
+                            '<div class="article-new-info fn-right">',
+                            '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
+                            '<div class="article-new-time">' + publishTime + '</div>',
+                            '</div>',
+                            '<div class="article-new-tag">' + typeName + '</div>',
+                            '</li>',
+                            '<li><div class="news-push" id="agency_shower_58"></div></li>'
+                        ].join('');
                     } else {
                         newsHtml += [
                             '<li class="article-new-item ' + className + '">',
@@ -124,7 +109,6 @@ class Article {
                             '<div class="article-new-info fn-right">',
                             '<div class="article-new-title"><a href="' + res.data[i].url + '">' + res.data[i].title + '</a></div>',
                             '<div class="article-new-time">' + publishTime + '</div>',
-                            '<a href="http://m.diandong.com/app/?f=Articlebuttom" class="article-app-link">客户端阅读</a href="">',
                             '</div>',
                             '<div class="article-new-tag">' + typeName + '</div>',
                             '</li>'
