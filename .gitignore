@@ -1,3 +1,4 @@
 node_modules
-*~
-.DS_Store
+webpack.config.js
+webpack.config.page.js
+source/app.js
